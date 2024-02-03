@@ -1,0 +1,271 @@
+/*custom proerties*/
+:root{
+   --text-color:#fff;
+
+}
+
+/*box modeling*/
+
+*,
+*::before,
+*::after{
+  padding: 0;
+
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+    color: rgb(17, 16, 16);
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*header start*/
+header {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(29, 28, 28);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header >  nav{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0 30px;
+    background-color: rgb(29, 28, 28);
+    box-shadow: 0 0 10px rgba(0,0,0,0.45);
+    border-radius: 18px;
+   
+}
+ nav .cart{
+    display: flex;
+    flex: 1;
+    gap: 20px;
+ 
+ }
+
+
+
+nav > h1{
+    flex: 1;
+    color: wheat;
+    font-weight: 100;
+}
+h1 span {
+    color: rgb(38, 51, 51);
+}
+
+
+nav > ul {
+    display: flex;
+    flex: 2;
+
+}
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(118, 114, 114);
+    margin-right: 30px;
+    position: relative;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    background-color: rgb(80, 93, 100);
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    width: 0;
+    transition: all .3s ease;
+
+    
+}
+
+nav ul li a:hover::after{
+width: 100%;
+}
+
+
+#shop{
+    background-color: rgb(37, 56, 65);
+    color: wheat;
+    height: 25px;
+
+}
+[ id="sign"]{
+    padding: 0.5rem 1.2rem;
+    border: 0;
+    border-radius: 25px;
+    background-color: rgb(173, 173, 191);
+
+    color: rgb(53, 48, 48);
+    box-shadow:  0 0 10px rgba(0,0,0.45);
+}
+button:hover{
+    opacity: .8;
+    transition: all .3s ease;
+}
+
+
+/*header end*/
+
+/*main start*/
+main{
+    flex: 1;
+}
+main #home-hero{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 70vh;
+
+}
+.image-container{
+    width: 270px;
+    height: 270px;
+    position: relative;
+}
+.image-container img{
+  opacity: 1;
+    
+}
+.image-container img:hover{
+    opacity: 1;
+}
+
+.product-description{
+    width: 270px;
+    height: 270px;
+   
+}
+.adding-cart{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+.buy-now{
+   padding: 0.5rem 4rem;
+    background-color: rgb(41, 38, 38);
+    color: white;
+   text-transform: uppercase;
+    border: 0;
+}
+
+select{
+    display: block;
+    margin-top: 10px;
+    padding: 0.3rem 2rem;
+    border: 0;
+    background-color: whitesmoke;
+}
+.cart-now{
+    padding: 0.5rem 3.1rem;
+    background-color: rgb(23, 59, 71);
+    color: white;
+    text-transform: uppercase;
+    border: 0;  
+}
+
+.image-container span{
+    top: 20px;
+    right: 70px;
+    position:absolute;
+    background-color: darkred;
+    color: white;
+    padding: 0px 8px;
+}
+
+#featured{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    align-items: center;
+    padding-bottom: 3rem;
+    color: rgb(54, 52, 52);
+
+
+}
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:10px
+
+}
+.img-cart img{
+    width: 200px;
+    height: 200px;
+    opacity: .6;
+}
+/*main end*/
+
+input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-size: 20px;
+    color: rgb(65, 62, 62);
+}
+
+/*media design*/
+
+
+@media only screen and (max-width:600px) {
+    header >  nav{
+      
+        grid-template-columns: repeat(1,1fr);
+        padding-bottom: 1rem;
+
+    }
+  nav ul {
+    flex-direction: column;
+
+  }
+  .cart{
+    flex-direction: column;
+  }
+  main #home-hero{
+    flex-direction: column;
+    padding-bottom: 10rem;
+  }
+
+ img{
+    width: 150px;
+    height: 150px;
+ }
+#featured img{
+    width: 150px;
+    height: 150px;
+}
+
+.image-container span{
+    font-size: 8px;
+}
+
+.grid-container{
+   grid-template-columns: 1fr;
+}
+}
